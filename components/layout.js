@@ -3,15 +3,16 @@ import Head from 'next/head';
 import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
+import NavBar from './navBar';
 
-const name = 'Welcome to Legaltech House';
-export const siteTitle = 'Legaltech House';
+export const siteTitle = 'Legal Tech House';
 
 export default function Layout({ children, home }) {
     return (
-        <div className={styles.container}>
+        <>
             <Head>
-                <link rel="icon" href="/favicon.ico" />
+                {/* <IE10 and below only */}
+                <meta httpEquiv="x-ua-compatible" content="ie=edge" />
                 <meta
                     name="description"
                     content="Legaltech house landing page"
@@ -24,9 +25,15 @@ export default function Layout({ children, home }) {
                 />
                 <meta name="og:title" content={siteTitle} />
                 <meta name="twitter:card" content="summary_large_image" />
+                <link rel="icon" href="/favicon.ico" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" />
+                <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&Cormorant+Garamond:wght@600&display=swap" rel="stylesheet" />
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+
             </Head>
 
-            <header className={styles.header}>
+            <NavBar />
+            {/* <header className={styles.header}>
                 {home ? (
                     <>
                         <h1 className={utilStyles.heading2Xl}>{name}</h1>
@@ -40,16 +47,16 @@ export default function Layout({ children, home }) {
                         </h2>
                     </>
                 )}
-            </header>
-            <main>{ children }</main>
-            {!home && (
-                <div>
-                    <Link href="/">
-                        <a>← Back to home</a>
-                    </Link>
-                </div>
-            )}
-        </div>
+            </header> */}
+            <main>{children}</main>
+            {/* {!home && (
+                    <div>
+                        <Link href="/">
+                            <a>← Back to home</a>
+                        </Link>
+                    </div>
+                )} */}
+        </>
     )
 
 }
