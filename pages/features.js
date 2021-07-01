@@ -15,11 +15,11 @@ export default function Features({ articles }) {
                 <article className="container col-xxl-8 px-4 py-5" key={id}>
                     <div className="row align-items-center justify-content-between">
                         {(id % 2 !== 0) && (
-                            <div className="col-md-5">
-                                <img src={image} className="img-fluid rounded-3 mb-4 mb-md-0" alt={title} />
+                            <div className="col-lg-5">
+                                <img src={image} className="img-fluid rounded-3 mb-4 mb-lg-0" alt={title} />
                             </div>
                         )}
-                        <div className="col-md-7 col-lg-6">
+                        <div className="col-lg-7 col-lg-6">
                             <h2 className="display-4 mb-4">
                                 {title}<br />
                                 <span className="d-block h6">
@@ -31,8 +31,8 @@ export default function Features({ articles }) {
                         </div>
 
                         {(id % 2 === 0) && (
-                            <div className="col-md-5">
-                                <img src={image} className="img-fluid rounded-3 mb-4 mb-md-0" alt={title} />
+                            <div className="col-lg-5 order-md-first order-lg-last">
+                                <img src={image} className="img-fluid rounded-3 mb-4 mb-lg-0" alt={title} />
                             </div>
                         )}
                     </div>

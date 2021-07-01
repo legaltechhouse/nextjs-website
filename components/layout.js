@@ -3,7 +3,8 @@ import Head from 'next/head';
 import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
-import NavBar from './navBar';
+import Header from './header';
+import Footer from './footer';
 
 export const siteTitle = 'Legal Tech House';
 
@@ -32,7 +33,7 @@ export default function Layout({ children, home }) {
 
             </Head>
 
-            <NavBar />
+            <Header />
             {/* <header className={styles.header}>
                 {home ? (
                     <>
@@ -56,6 +57,7 @@ export default function Layout({ children, home }) {
                         </Link>
                     </div>
                 )} */}
+                <Footer/>
         </>
     )
 
