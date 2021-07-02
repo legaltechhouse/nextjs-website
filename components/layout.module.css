@@ -1,7 +1,10 @@
 .container {
   max-width: 36rem;
-  padding: 0 1rem;
-  margin: 3rem auto 6rem;
+  padding: 2rem;
+  margin:  0 auto;
+  height: calc(100vh - 4rem);
+  display: flex;
+  align-items: center;
 }
 
 .header {

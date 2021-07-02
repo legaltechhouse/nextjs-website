@@ -1,20 +1,18 @@
 import Head from 'next/head';
 //import Image from 'next/image';
 import styles from './layout.module.css';
-import utilStyles from '../styles/utils.module.css';
-import Link from 'next/link';
 
 const name = 'Welcome to Legaltech House';
 export const siteTitle = 'Legaltech House';
 
-export default function Layout({ children, home }) {
+export default function Layout({ children }) {
     return (
-        <div className={styles.container}>
+        <>
             <Head>
                 <link rel="icon" href="/favicon.ico" />
                 <meta
                     name="description"
-                    content="Legaltech house landing page"
+                    content="Legaltech house coming soon"
                 />
                 <meta
                     property="og:image"
@@ -24,32 +22,14 @@ export default function Layout({ children, home }) {
                 />
                 <meta name="og:title" content={siteTitle} />
                 <meta name="twitter:card" content="summary_large_image" />
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+                <link href="https://fonts.googleapis.com/css2?family=Istok+Web:wght@700&display=swap" rel="stylesheet" />
             </Head>
 
-            <header className={styles.header}>
-                {home ? (
-                    <>
-                        <h1 className={utilStyles.heading2Xl}>{name}</h1>
-                    </>
-                ) : (
-                    <>
-                        <h2 className={utilStyles.headingLg}>
-                            <Link href="/">
-                                <a className={utilStyles.colorInherit}>{name}</a>
-                            </Link>
-                        </h2>
-                    </>
-                )}
-            </header>
-            <main>{ children }</main>
-            {!home && (
-                <div>
-                    <Link href="/">
-                        <a>← Back to home</a>
-                    </Link>
-                </div>
-            )}
-        </div>
+            <main className={styles.container}>{children}</main>
+
+        </>
     )
 
 }
