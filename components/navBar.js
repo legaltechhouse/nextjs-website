@@ -18,6 +18,11 @@ export default function NavBar() {
                     <a className={`nav-link ${setLinkState('/features')}`}>Features</a>
                 </Link>
             </li>
+            <li className="nav-item">
+                <Link href="/pricing">
+                    <a className={`nav-link ${setLinkState('/pricing')}`}>Pricing</a>
+                </Link>
+            </li>
         </>
     );
 }

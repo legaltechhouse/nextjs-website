@@ -24,7 +24,8 @@ export default function Home({ allPostsData }) {
       <Head>
         <title> {siteTitle} </title>
       </Head>
-      <section className="container col-xxl-8 px-4 py-5">
+      <section className="bg-white">
+      <div className="container col-xxl-8 px-4 py-5">
         <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
           <div className="col-10 col-sm-8 col-lg-6">
             <img src="./images/bootstrap-themes.png" className="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" loading="lazy" />
@@ -38,9 +39,39 @@ export default function Home({ allPostsData }) {
             </div>
           </div>
         </div>
+        </div>
       </section>
-      <section className="container px-4 py-5">
-        <h2 className="pb-2 border-bottom">Blog</h2>
+      <section className="features-icons bg-dark text-center text-white">
+        <h2 className="">Features</h2>
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-4">
+                        <div className="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                            <div className="features-icons-icon d-flex"><i className="bi-window m-auto text-primary"></i></div>
+                            <h3>Fully Responsive</h3>
+                            <p className="lead mb-0">This theme will look great on any device, no matter the size!</p>
+                        </div>
+                    </div>
+                    <div className="col-lg-4">
+                        <div className="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                            <div className="features-icons-icon d-flex"><i className="bi-layers m-auto text-primary"></i></div>
+                            <h3>Bootstrap 5 Ready</h3>
+                            <p className="lead mb-0">Featuring the latest build of the new Bootstrap 5 framework!</p>
+                        </div>
+                    </div>
+                    <div className="col-lg-4">
+                        <div className="features-icons-item mx-auto mb-0 mb-lg-3">
+                            <div className="features-icons-icon d-flex"><i className="bi-terminal m-auto text-primary"></i></div>
+                            <h3>Easy to Use</h3>
+                            <p className="lead mb-0">Ready to use with your own content, or customize the source files!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+      <section className="bg-light">
+      <div className="container px-4 py-5">
+        <h2 className="pb-2">Blog</h2>
         <div className="row g-4 py-5 row-cols-1 row-cols-lg-3">
           {allPostsData.map(({ id, date, title, icon }) => (
             <article className="feature col col-md-6" key={id}>
@@ -65,6 +96,7 @@ export default function Home({ allPostsData }) {
               </Link>
             </article>
           ))}
+          </div>
         </div>
       </section>
     </Layout>
