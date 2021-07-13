@@ -1,6 +1,7 @@
 import Head from 'next/head';
+import Link from 'next/link';
+
 import Layout, { siteTitle } from '../components/layout';
-import Date from '../components/date';
 import PageHeading from '../components/pageHeading';
 
 export default function Features({ pricing }) {
@@ -11,28 +12,33 @@ export default function Features({ pricing }) {
             </Head>
 
             <PageHeading title="Pricing" />
-            
-            <section className="bg-gray py-5 border-bottom">
-            <div className="container">
-            <div className="row row-cols-1 row-cols-md-3 mb-3 text-center">
-                {pricing.map(({ id, name, price, description }) => (
-                    <article className="col" key={id}>
-                        <div className="card mb-4 rounded-3 shadow-sm">
 
-                            <div className="card-header py-3">
-                                <h4 className="my-0 fw-normal">{name}</h4>
-                            </div>
-                            <div className="card-body">
+            <section className="bg-light py-5">
+                <div className="container px-5 my-5">
+                    <div className="row gx-5 justify-content-center">
+                        {pricing.map(({ id, plan, name, price, description }) => (
+                            <article className="col-lg-6 col-xl-4" key={id}>
+                                <div className="card mb-5 mb-xl-0 shadow border-0">
+                                    <div className="card-body p-5">
+                                        <div className="small text-uppercase fw-bold text-muted">{plan}</div>
+                                        <div className="mb-3">
+                                            <span className="display-6 fw-bold">P{price}</span>
+                                            <span className="text-muted">/ mo.</span>
+                                        </div>
+                                        <h2 className="h6">{name}</h2>
+                                        <p className="text-muted mb-4">{description}</p>
 
-                                <h1 className="card-title pricing-card-title">{price}<small className="text-muted fw-light">/mo</small></h1>
-                                <p className="text-muted">{description}</p>
-                                <a href="#" className="w-100 btn btn-lg btn-outline-primary">Sign up</a>
-                            </div>
-                        </div>
-                    </article>
-                ))}
+                                        <div className="d-grid">
+                                            <Link href="/">
+                                                <a className="btn btn-outline-primary">Choose plan</a>
+                                            </Link>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        ))}
+                    </div>
                 </div>
-            </div>
             </section>
         </Layout>
     )
