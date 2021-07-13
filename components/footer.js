@@ -47,11 +47,9 @@ export default function Footer() {
                     </div>
 
                     <div className="col-12 col-lg-2 mt-4 mt-lg-0 text-lg-right">
-                        <a href="#" className="mx-2"><i className="bi-twitter fs-5" aria-hidden="true"></i></a>
                         <a href="#" className="mx-2"><i className="fs-5 bi-facebook" aria-hidden="true"></i></a>
                         <a href="#" className="mx-2"><i className="fs-5 bi-instagram" aria-hidden="true"></i></a>
                         <a href="#" className="mx-2"><i className="fs-5 bi-linkedin" aria-hidden="true"></i></a>
-                        <a href="#" className="mx-2"><i className="fs-5 bi-github" aria-hidden="true"></i></a>
                     </div>
                 </div>
 

@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { useEffect } from 'react';
 //import Image from 'next/image';
 import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
@@ -9,6 +10,10 @@ import Footer from './footer';
 export const siteTitle = 'Legal Tech House';
 
 export default function Layout({ children, home }) {
+    useEffect( () => { 
+        document.querySelector('body').classList.add('d-flex','flex-column','h-100');
+        document.querySelector('#__next').classList.add('flex-shrink-0');
+    } );
     return (
         <>
             <Head>
@@ -27,14 +32,14 @@ export default function Layout({ children, home }) {
                 <meta name="og:title" content={siteTitle} />
                 <meta name="twitter:card" content="summary_large_image" />
                 <link rel="icon" href="/favicon.ico" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" />
-                <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&Cormorant+Garamond:wght@600&display=swap" rel="stylesheet" />
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+                <link href="https://fonts.googleapis.com/css2?family=Istok+Web:wght@700&family=Roboto:wght@100;300&display=swap" rel="stylesheet" />
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
 
             </Head>
-
-            <Header />
-            {/* <header className={styles.header}>
+                <Header />
+                {/* <header className={styles.header}>
                 {home ? (
                     <>
                         <h1 className={utilStyles.heading2Xl}>{name}</h1>
@@ -49,7 +54,7 @@ export default function Layout({ children, home }) {
                     </>
                 )}
             </header> */}
-            <main>{children}</main>
+                <main>{children}</main>
             {/* {!home && (
                     <div>
                         <Link href="/">
@@ -57,7 +62,7 @@ export default function Layout({ children, home }) {
                         </Link>
                     </div>
                 )} */}
-                <Footer/>
+            <Footer />
         </>
     )
 
