@@ -29,7 +29,7 @@ export default function Blog({ allPostsData }) {
             <section className="py-5">
                 <div className="container px-5">
                     <div className="row gx-5">
-                        {allPostsData.map(({ id, date, title, description, icon }) => (
+                        {allPostsData.map(({ id, date, title, description }) => (
                             <article className="col-lg-4 mb-5" key={id}>
                                 <div className="card h-100 shadow border-0">
                                     <Link href={`/posts/${id}`}>

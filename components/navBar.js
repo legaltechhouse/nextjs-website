@@ -28,6 +28,11 @@ export default function NavBar() {
                     <a className={`nav-link ${setLinkState('/blog')}`}>Blog</a>
                 </Link>
             </li>
+            <li className="nav-item">
+                <Link href="/contact">
+                    <a className={`nav-link ${setLinkState('/contact')}`}>Contact</a>
+                </Link>
+            </li>
         </>
     );
 }

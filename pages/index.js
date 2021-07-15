@@ -31,7 +31,7 @@ export default function Home({ allPostsData }) {
               <h1 className="display-5 fw-bolder text-white mb-2">Welcome to <br />  {name}</h1>
               <p className="lead fw-normal text-white-50 mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit!</p>
               <div className="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                <a className="btn btn-primary btn-lg px-4 me-sm-3">Sign-up!</a>
+                <a className="btn btn-primary btn-lg px-4 me-sm-3">Get Started</a>
                 <a className="btn btn-outline-light btn-lg px-4">Learn More</a>
               </div>
             </div>
@@ -42,8 +42,15 @@ export default function Home({ allPostsData }) {
         </div>
       </section>
       <section className="features-icons text-center bg-light">
-        <h2 className="">Features</h2>
         <div className="container">
+        <div className="row gx-5 justify-content-center">
+            <div className="col-lg-8 col-xl-6">
+              <div className="text-center">
+                <h2 className="fw-bolder">Product Features</h2>
+                <p className="lead fw-normal text-muted mb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque fugit ratione dicta mollitia. Officiis ad.</p>
+              </div>
+            </div>
+          </div>
           <div className="row">
             <div className="col-lg-4">
               <div className="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
@@ -90,29 +97,44 @@ export default function Home({ allPostsData }) {
       </section>
       <section className="bg-light">
         <div className="container px-4 py-5">
-          <h2 className="pb-2">Blog</h2>
-          <div className="row g-4 py-5 row-cols-1 row-cols-lg-3">
-            {allPostsData.map(({ id, date, title, description, icon }) => (
-              <article className="feature col col-md-6" key={id}>
-                <div className="feature-icon bg-primary bg-gradient">
-                  <i className={`bi bi-${icon}`}></i>
-                </div>
-                <h3 className="h4">
+          <div className="row gx-5 justify-content-center">
+            <div className="col-lg-8 col-xl-6">
+              <div className="text-center">
+                <h2 className="fw-bolder">Our blog</h2>
+                <p className="lead fw-normal text-muted mb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque fugit ratione dicta mollitia. Officiis ad.</p>
+              </div>
+            </div>
+          </div>
+          <div className="row gx-5">
+            {allPostsData.map(({ id, date, title, description }) => (
+              <article className="col-lg-4 mb-5" key={id}>
+                <div className="card h-100 shadow border-0">
                   <Link href={`/posts/${id}`}>
-                    <a>{title}</a>
+                    <a>
+                      <img src="https://dummyimage.com/600x350/ced4da/6c757d" className="card-img-top" alt={title} />
+                    </a>
                   </Link>
-                </h3>
-                <small className={utilStyles.lightText}>
-                  <Date dateString={date} />
-                </small>
-                <p>{description}</p>
+                  <div className="card-body p-4">
+                    <div className="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
 
-                <Link href={`/posts/${id}`}>
-                  <a className="icon-link">
-                    Read More
-                <i className="bi-arrow-right" role="img" aria-label="arrow right"></i>
-                  </a>
-                </Link>
+                    <Link href={`/posts/${id}`}>
+                      <a className="text-decoration-none link-dark stretched-link">
+                        <h2 className="h5 card-title mb-3">
+                          {title}<br />
+                          <span className="d-block h6">
+
+                          </span>
+                        </h2>
+                      </a>
+                    </Link>
+                    <p className="card-text mb-0">{description}</p>
+                  </div>
+                  <div className="card-footer p-4 pt-0 bg-transparent border-top-0">
+                    <div className="small">
+                      <div className="text-muted"><Date dateString={date} /> &middot; 6 min read</div>
+                    </div>
+                  </div>
+                </div>
               </article>
             ))}
           </div>
