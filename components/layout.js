@@ -23,8 +23,8 @@ export default function Layout({ children }) {
                 <meta name="og:title" content={siteTitle} />
                 <meta name="twitter:card" content="summary_large_image" />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-                <link href="https://fonts.googleapis.com/css2?family=Istok+Web:wght@700&display=swap" rel="stylesheet" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+                <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet" />
             </Head>
 
             <main className={styles.container}>{children}</main>

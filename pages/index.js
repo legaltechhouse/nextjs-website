@@ -11,7 +11,7 @@ export default function Home() {
         <title> { siteTitle } </title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <img src="../images/legaltechhouse-logo.svg" alt="logo"/>
+        <img src="/images/legaltechhouse-logo-inverse.svg" alt="logo"/>
         <h1>Coming Soon</h1>
      </section>
     </Layout>
