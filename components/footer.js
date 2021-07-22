@@ -1,4 +1,5 @@
 import NavBar from './navBar';
+import { siteTitle } from '../components/layout';
 
 export default function Footer() {
     return (
@@ -36,7 +37,7 @@ export default function Footer() {
             <div className="container">
                 <div className="row text-center align-items-center">
                     <div className="col-12 col-lg-2 text-lg-left">
-                        LEGAL TECH HOUSE
+                        { siteTitle }
                     </div>
 
                     <div className="col mt-4 mt-lg-0 text-center">
@@ -48,14 +49,13 @@ export default function Footer() {
 
                     <div className="col-12 col-lg-2 mt-4 mt-lg-0 text-lg-right">
                         <a href="#" className="mx-2"><i className="fs-5 bi-facebook" aria-hidden="true"></i></a>
-                        <a href="#" className="mx-2"><i className="fs-5 bi-instagram" aria-hidden="true"></i></a>
                         <a href="#" className="mx-2"><i className="fs-5 bi-linkedin" aria-hidden="true"></i></a>
                     </div>
                 </div>
 
                 <div className="row mt-4">
                     <div className="col text-center">
-                        <small className="text-muted">© 2021 Legal Tech House</small>
+                        <small className="text-muted">© 2021 { siteTitle }</small>
                     </div>
                 </div>
             </div>

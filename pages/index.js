@@ -4,10 +4,7 @@ import Link from 'next/link';
 import Layout, { siteTitle } from '../components/layout';
 import Date from '../components/date';
 
-import { getSortedPostsData } from '../lib/posts'
-import utilStyles from '../styles/utils.module.css';
-
-const name = 'Legal Tech House';
+import { getSortedPostsData } from '../lib/posts';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData()
@@ -27,23 +24,34 @@ export default function Home({ allPostsData }) {
       <section className="bg-dark py-5">
         <div className="container px-5">
           <div className="row gx-5 align-items-center justify-content-center">
-            <div className="col-lg-8 col-xl-7 col-xxl-6">
-              <h1 className="display-5 fw-bolder text-white mb-2">Welcome to <br />  {name}</h1>
-              <p className="lead fw-normal text-white-50 mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit!</p>
+            <div className="col-lg-8 col-xl-7 col-xxl-6 text-center text-xl-start">
+              <h1 className="display-5 fw-bolder text-white mb-2">
+                <span className="d-block">
+                  We build </span>
+                <span className="d-block">
+                  <span className="text-primary">websites</span> for <span className="text-primary">Lawfirms</span>
+                </span>
+              </h1>
+              <p className="lead fw-normal text-white-50 mb-4">LegalTechHouse helps you digially transform your lawfirm business by bringing it online!</p>
               <div className="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                <a className="btn btn-primary btn-lg px-4 me-sm-3">Get Started</a>
-                <a className="btn btn-outline-light btn-lg px-4">Learn More</a>
+
+                <Link href={`/posts`}>
+                  <a className="btn btn-primary btn-lg px-4 me-sm-3">Get Started</a>
+                </Link>
+                <Link href={`/posts/`}>
+                  <a className="btn btn-outline-light btn-lg px-4">Learn More</a>
+                </Link>
               </div>
             </div>
             <div className="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
-              <img src="./images/bootstrap-themes.png" className="img-fluid rounded-3 my-5" alt="Bootstrap Themes" loading="lazy" />
+              <img src="/images/bootstrap-themes.png" className="img-fluid rounded-3 my-5" alt="Bootstrap Themes" loading="lazy" />
             </div>
           </div>
         </div>
       </section>
       <section className="features-icons text-center bg-light">
         <div className="container">
-        <div className="row gx-5 justify-content-center">
+          <div className="row gx-5 justify-content-center">
             <div className="col-lg-8 col-xl-6">
               <div className="text-center">
                 <h2 className="fw-bolder">Product Features</h2>

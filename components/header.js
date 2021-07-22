@@ -5,11 +5,12 @@ import NavBar from './navBar';
 
 export default function Header() {
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div className="container px-5">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark py-lg-3">
+            <div className="container-fluid px-5">
                 <Link href="/">
                     <a className="navbar-brand">
-                        <span className="d-inline-block ml-1">Legal Tech House</span>
+                        <img src="/images/logo-no-tagline-small-inverse.svg" className="" alt="Logo" />
+                        <span className="d-inline-block ml-1 d-none">Legal Tech House</span>
                     </a>
                 </Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>

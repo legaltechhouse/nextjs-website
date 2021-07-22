@@ -7,7 +7,7 @@ import Link from 'next/link';
 import Header from './header';
 import Footer from './footer';
 
-export const siteTitle = 'Legal Tech House';
+export const siteTitle = 'LegalTechHouse';
 
 export default function Layout({ children, home }) {
     useEffect( () => { 
@@ -34,7 +34,7 @@ export default function Layout({ children, home }) {
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-                <link href="https://fonts.googleapis.com/css2?family=Istok+Web:wght@700&family=Roboto:wght@100;300&display=swap" rel="stylesheet" />
+                <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet" />
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
 
             </Head>
