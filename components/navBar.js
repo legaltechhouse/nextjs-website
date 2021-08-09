@@ -1,5 +1,3 @@
-
-
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -16,6 +14,11 @@ export default function NavBar() {
             <li className="nav-item">
                 <Link href="/features">
                     <a className={`nav-link ${setLinkState('/features')}`}>Features</a>
+                </Link>
+            </li>
+            <li className="nav-item">
+                <Link href="/about">
+                    <a className={`nav-link ${setLinkState('/about')}`}>About Us</a>
                 </Link>
             </li>
             <li className="nav-item">
