@@ -35,10 +35,10 @@ export default function Home({ allPostsData }) {
               <p className="lead fw-normal text-white-50 mb-4">LegalTechHouse helps you digially transform your lawfirm business by bringing it online!</p>
               <div className="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
 
-                <Link href={`/posts`}>
+                <Link href={`/pricing`}>
                   <a className="btn btn-primary btn-lg px-4 me-sm-3">Get Started</a>
                 </Link>
-                <Link href={`/posts/`}>
+                <Link href={`/features`}>
                   <a className="btn btn-outline-light btn-lg px-4">Learn More</a>
                 </Link>
               </div>
