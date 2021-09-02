@@ -12,7 +12,7 @@ export default function PageHeading({ title, date, caption }) {
                         {/* <!-- Headin --> */}
                         <h1 className="display-6">{title}</h1>
                         {/* <!-- Text --> */}
-                        <p className="lead mb-7 mb-md-9">
+                        <p className="mb-7 mb-md-9">
                         {date ? (<Date dateString={date} />) : (caption ? caption : placeholder)}
                         </p>
                     </div>

@@ -9,7 +9,7 @@ export default function Footer() {
                     <div className="row justify-content-center">
                         <div className="col-xl-6">
                             <h2 className="mb-4">Join Our Mailing List</h2>
-                            <p>Subscribe to keep up to date with our latest features and exclusive subscriber-only content</p>
+                            <p>Subscribe to keep up to date with our latest features</p>
                             <form className="form-subscribe" id="contactFormFooter" data-sb-form-api-token="API_TOKEN">
 
                                 <div className="row">
