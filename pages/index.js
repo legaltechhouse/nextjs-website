@@ -64,7 +64,7 @@ export default function Home({ allPostsData }) {
               <div className="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                 <div className="features-icons-icon d-flex"><i className="bi-window m-auto text-primary"></i></div>
                 <h3 className="h4 fw-bolder">Fully Responsive</h3>
-                <p className="lead fw-normal mb-0">This theme will look great on any device, no matter the size!</p>
+                <p className="lead fw-normal mb-0">Our websites will look great on any device, no matter the size!</p>
               </div>
             </div>
             <div className="col-lg-4">

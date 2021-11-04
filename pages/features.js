@@ -26,7 +26,7 @@ export default function Features() {
 
 
             <section className="py-5">
-                <div className="container px-5">
+                <div className="container">
                     <ul className="nav nav-tabs justify-content-center mb-5" id="pills-tab" role="tablist">
                         <li className="nav-item" role="presentation">
                             <button className="nav-link active" id="pills-website-tab" data-bs-toggle="pill" data-bs-target="#pills-website" type="button" role="tab" aria-controls="pills-website" aria-selected="true">Website</button>
@@ -39,9 +39,9 @@ export default function Features() {
 
                         <div className="tab-pane fade show active" id="pills-website" role="tabpanel" aria-labelledby="pills-website-tab">
                             <div className="row text-center">
-                                {data?.website.map(({ id, title, description }) => (
-                                    <div className="col-md-6 col-lg-4" key={id}>
-                                        <Website title={title} description={description} />
+                                {data?.website.map(({ id, title, description, image }) => (
+                                    <div className="col-lg-6 col-xl-4" key={id}>
+                                        <Website title={title} description={description} image={image} />
                                     </div>
 
                                 ))}
@@ -49,13 +49,11 @@ export default function Features() {
                         </div>
 
                         <div className="tab-pane fade" id="pills-admin" role="tabpanel" aria-labelledby="pills-admin-tab">
-                            <div className="row">
-                                {data?.admin.map(({ id, title, description }) => (
-                                    <div className="col-md-6" key={id}>
-                                        <Admin title={title} description={description} />
-                                    </div>
-                                ))}
-                            </div>
+                            {data?.admin.map(({ id, title, description, image }, inx) => (
+                                <article className="row align-items-center justify-content-between p-3 py-md-5" key={id}>
+                                    <Admin title={title} description={description} image={image} pos={inx}/>
+                                </article>
+                            ))}
                         </div>
 
                     </div>
