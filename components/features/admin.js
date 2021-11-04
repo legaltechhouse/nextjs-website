@@ -2,7 +2,7 @@ import LtImage from "../image";
 
 export default function Admin({ title, description, image, pos }) {
     const order = pos % 2 === 0 ? 1 : 0;
-    const reverseOrder = ++order ? 1 : 0; 
+    const reverseOrder = !!order ? 0 : 1; 
 
     return (
         <>

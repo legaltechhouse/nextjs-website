@@ -80,7 +80,7 @@ const features = {
         },
         {
             id: 4,
-            title: 'Team Memeber',
+            title: 'Team Member',
             image: 'team-member.png',
             description: 'Team member page to add a detailed biography including qualifications and contacts.'
         },
