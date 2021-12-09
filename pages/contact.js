@@ -43,13 +43,8 @@ export default function Contact() {
                         </div>
 
                         <div className="tab-pane fade" id="pills-quotation" role="tabpanel" aria-labelledby="pills-quotation-tab">
-                            <div className="row gx-5 justify-content-center">
-                                <div className="col-lg-8 col-xl-6">
-                                    <QuotationForm />
-                                </div>
-                            </div>
+                            <QuotationForm />
                         </div>
-
                     </div>
 
                 </div>
