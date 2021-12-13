@@ -15,14 +15,17 @@ export default function Header() {
                         <span className="d-inline-block ml-1 d-none">Legal Tech House</span>
                     </a>
                 </Link>
+                    <a className="btn btn-primary ms-auto d-lg-none" href="#">Sign Up Now!</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="mainMenu">
-                    <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                    <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
                         <NavBar />
                     </ul>
                 </div>
+                    <a className="btn btn-primary ms-auto" href="#">Sign Up Now!</a>
             </div>
         </nav>
     );

@@ -80,6 +80,10 @@ a {
   }
 }
 
+.border-transparent {
+  border-color:rgba(255, 255, 255, 0.25) !important; 
+}
+
 .call-to-action {
   padding-top: 7rem;
   padding-bottom: 7rem;

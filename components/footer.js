@@ -4,7 +4,7 @@ import { siteTitle } from '../components/layout';
 export default function Footer() {
     return (
         <>
-            <section className="call-to-action border-bottom bg-dark text-white text-center" id="signup">
+            <section className="call-to-action border-bottom border-transparent bg-dark text-white text-center" id="signup">
                 <div className="container position-relative">
                     <div className="row justify-content-center">
                         <div className="col-xl-6">
@@ -13,12 +13,14 @@ export default function Footer() {
                             <form className="form-subscribe" id="contactFormFooter" data-sb-form-api-token="API_TOKEN">
 
                                 <div className="row">
-                                    <div className="col">
-                                        <input className="form-control form-control-lg" id="emailAddressBelow" type="email" placeholder="Email Address" data-sb-validations="required,email" data-sb-can-submit="no" />
+                                    <div className="col-sm">
+                                        <input className="form-control form-control-lg text-center text-sm-start" id="emailAddressBelow" type="email" placeholder="Email Address" data-sb-validations="required,email" data-sb-can-submit="no" />
                                         <div className="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:required">Email Address is required.</div>
                                         <div className="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:email">Email Address Email is not valid.</div>
                                     </div>
-                                    <div className="col-auto"><button className="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Subscribe</button></div>
+                                    <div className="col col-sm-auto d-grid gap-2 mx-auto mt-1">
+                                        <button className="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Subscribe</button>
+                                    </div>
                                 </div>
                                 <div className="d-none" id="submitSuccessMessage">
                                     <div className="text-center mb-3">
@@ -44,7 +46,6 @@ export default function Footer() {
                             <ul className="nav justify-content-center">
                                 <NavBar />
                             </ul>
-
                         </div>
 
                         <div className="col-12 col-lg-2 mt-4 mt-lg-0 text-lg-right">

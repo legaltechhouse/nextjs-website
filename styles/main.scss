@@ -49,6 +49,13 @@
 // Utilities
 @import "bootstrap/scss/utilities/api";
 
+$negative-spacers: if($enable-negative-margins, negativify-map($spacers), null);
 
 // Global CSS
 @import "./scss/global";
+
+@import "html5-device-mockups/dist/device-mockups.min.css";
+
+// :root {
+//     --bs-light-rgb: $primary;
+// }
