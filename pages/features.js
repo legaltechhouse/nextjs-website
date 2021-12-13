@@ -40,7 +40,7 @@ export default function Features() {
                         <div className="tab-pane fade show active" id="pills-website" role="tabpanel" aria-labelledby="pills-website-tab">
                             <div className="row text-center">
                                 {data?.website.map(({ id, title, description, image }) => (
-                                    <div className="col-lg-6 " key={id}>
+                                    <div className="col-sm-6 " key={id}>
                                         <Website title={title} description={description} image={image} />
                                     </div>
 

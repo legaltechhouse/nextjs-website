@@ -55,7 +55,7 @@ export default function Pricing() {
 
                                         <div className="d-grid">
                                             <Link href="/">
-                                                <a className="btn btn-outline-primary">Choose plan</a>
+                                                <a className="btn btn-outline-primary">Sign Up!</a>
                                             </Link>
                                         </div>
                                     </div>

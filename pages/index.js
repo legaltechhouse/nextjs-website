@@ -21,30 +21,42 @@ export default function Home({ allPostsData }) {
       <Head>
         <title> {siteTitle} </title>
       </Head>
-      <section className="bg-dark py-5">
+      <section className="bg-dark pt-5">
         <div className="container px-5">
-          <div className="row gx-5 align-items-center justify-content-center">
-            <div className="col-lg-8 col-xl-7 col-xxl-6 text-center text-xl-start">
-              <h1 className="display-5 fw-bolder text-white mb-2">
-                <span className="d-block">
-                  We build </span>
-                <span className="d-block">
-                  <span className="text-primary">websites</span> for <span className="text-primary">Lawfirms</span>
-                </span>
-              </h1>
-              <p className="lead fw-normal text-white-50 mb-4">LegalTechHouse helps you digially transform your lawfirm business by bringing it online!</p>
-              <div className="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+          <div className="text-center mb-5">
+            <h1 className="display-6 fw-bolder text-white mb-2">
+              <span className="d-block">
+                We build </span>
+              <span className="d-block">
+                <span className="text-primary">websites</span> for <span className="text-primary">Lawfirms</span>
+              </span>
+            </h1>
+            <p className="lead fw-normal text-white-50 mb-4">LegalTechHouse helps you digially transform your lawfirm business by bringing it online!</p>
+            <div className="d-grid gap-3 d-sm-flex justify-content-sm-center">
 
-                <Link href={`/pricing`}>
-                  <a className="btn btn-primary btn-lg px-4 me-sm-3">Get Started</a>
-                </Link>
-                <Link href={`/features`}>
-                  <a className="btn btn-outline-light btn-lg px-4">Learn More</a>
-                </Link>
+              <Link href={`/pricing`}>
+                <a className="btn btn-primary btn-lg px-4 me-sm-3">Get Started</a>
+              </Link>
+              <Link href={`/features`}>
+                <a className="btn btn-outline-light btn-lg px-4">Learn More</a>
+              </Link>
+            </div>
+          </div>
+
+          <div className="row align-items-center justify-content-center mb-n5">
+            <div className="col text-center me-n5">
+              <div className="device" data-device="Macbook2015" data-orientation="portrait" data-color="black">
+                <div className="screen">
+                  <img src="/images/home.png" className="img-fluid" alt="Bootstrap Themes" loading="lazy" />
+                </div>
               </div>
             </div>
-            <div className="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
-              <img src="/images/bootstrap-themes.png" className="img-fluid rounded-3 my-5" alt="Bootstrap Themes" loading="lazy" />
+            <div className="col-4 col-sm-3 text-center ms-n5 mb-n5">
+              <div className="device device-mobile" data-device="iPhone7" data-orientation="portrait" data-color="black">
+                <div className="screen">
+                  <img src="/images/home-mobile.png" className="img-fluid" alt="Bootstrap Themes" loading="lazy" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -63,7 +75,7 @@ export default function Home({ allPostsData }) {
             <div className="col-lg-4">
               <div className="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                 <div className="features-icons-icon d-flex"><i className="bi-window m-auto text-primary"></i></div>
-                <h3 className="h4 fw-bolder">Fully Responsive</h3>
+                <h3 className="h4 fw-bolder">Fully Responsive Websites</h3>
                 <p className="lead fw-normal mb-0">Our websites will look great on any device, no matter the size!</p>
               </div>
             </div>
@@ -117,7 +129,7 @@ export default function Home({ allPostsData }) {
           </div>
           <div className="row gx-5">
             {allPostsData.map(({ id, date, title, description }) => (
-              <article className="col-lg-4 mb-5" key={id}>
+              <article className="col col-lg-4 mb-5" key={id}>
                 <div className="card h-100 shadow border-0">
                   <Link href={`/posts/${id}`}>
                     <a>

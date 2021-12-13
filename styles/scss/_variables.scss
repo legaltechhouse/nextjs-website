@@ -4,7 +4,6 @@
 // Color Variables
 // Bootstrap Color Overrides
 
-
 $blue: #4e73df !default;
 $indigo: #6610f2 !default;
 $purple: #6f42c1 !default;
@@ -27,5 +26,5 @@ $display-font-weight: 600;
 $font-family-sans-serif: 'Montserrat';
 $font-weight-base: 400;
 
-// Set Contrast Threshold
+$enable-negative-margins:     true !default;
 
