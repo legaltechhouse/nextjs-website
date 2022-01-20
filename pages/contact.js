@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 import Layout, { siteTitle } from '../components/layout';
 import ContactForm from '../components/contacts/contact-form';
 import ContactDetails from '../components/contacts/contact-details';
@@ -11,6 +12,8 @@ export default function Contact() {
     useEffect(() => {
         import('bootstrap/js/dist/tab');
     });
+    const router = useRouter();
+    const setActiveTab = (path, className) => router.asPath.endsWith(path) ? className : '';
     return (
         <Layout>
             <Head>
@@ -20,18 +23,18 @@ export default function Contact() {
             <PageHeading title="Contact" />
 
             <section className="bg-light py-5">
-                <div className="container px-sm-5 my-sm-5">
+                <div className="container px-lg-5 my-lg-5">
                     <ul className="nav nav-tabs justify-content-center" id="pills-tab" role="tablist">
                         <li className="nav-item" role="presentation">
-                            <button className="nav-link active" id="pills-contacts-tab" data-bs-toggle="pill" data-bs-target="#pills-contacts" type="button" role="tab" aria-controls="pills-contacts" aria-selected="true">contacts</button>
+                            <button className={`nav-link ${setActiveTab('contact', 'active')}`} id="pills-contacts-tab" data-bs-toggle="pill" data-bs-target="#pills-contacts" type="button" role="tab" aria-controls="pills-contacts" aria-selected="true">contacts</button>
                         </li>
                         <li className="nav-item" role="presentation">
-                            <button className="nav-link" id="pills-quotation-tab" data-bs-toggle="pill" data-bs-target="#pills-quotation" type="button" role="tab" aria-controls="pills-quotation" aria-selected="false">Request A Quote</button>
+                            <button className={`nav-link ${setActiveTab('requestquote', 'active')}`} id="pills-quotation-tab" data-bs-toggle="pill" data-bs-target="#pills-quotation" type="button" role="tab" aria-controls="pills-quotation" aria-selected="false">Request A Quote</button>
                         </li>
                     </ul>
-                    <div className="tab-content p-3 p-sm-5 bg-white" id="pills-tabContent">
+                    <div className="tab-content p-3 p-md-5 bg-white" id="pills-tabContent">
 
-                        <div className="tab-pane fade show active" id="pills-contacts" role="tabpanel" aria-labelledby="pills-contacts-tab">
+                        <div className={`tab-pane fade ${setActiveTab('contact', 'show active')}`} id="pills-contacts" role="tabpanel" aria-labelledby="pills-contacts-tab">
                             <div className="row">
                                 <div className="col-lg-4 col-xl-6">
                                     <ContactDetails />
@@ -42,7 +45,7 @@ export default function Contact() {
                             </div>
                         </div>
 
-                        <div className="tab-pane fade" id="pills-quotation" role="tabpanel" aria-labelledby="pills-quotation-tab">
+                        <div className={`tab-pane fade ${setActiveTab('requestquote', 'show active')}`} id="pills-quotation" role="tabpanel" aria-labelledby="pills-quotation-tab">
                             <QuotationForm />
                         </div>
                     </div>

@@ -54,8 +54,8 @@ export default function Pricing() {
                                         </ul>
 
                                         <div className="d-grid">
-                                            <Link href="/">
-                                                <a className="btn btn-outline-primary">Sign Up!</a>
+                                            <Link href="/contact?requestquote">
+                                                <a className="btn btn-outline-primary">Request a Quote</a>
                                             </Link>
                                         </div>
                                     </div>

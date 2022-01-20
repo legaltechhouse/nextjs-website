@@ -61,7 +61,7 @@ export default function Home({ allPostsData }) {
           </div>
         </div>
       </section>
-      <section className="features-icons text-center bg-light">
+      <section className="features-icons text-center bg-light d-none">
         <div className="container">
           <div className="row gx-5 justify-content-center">
             <div className="col-lg-8 col-xl-6">
@@ -99,7 +99,7 @@ export default function Home({ allPostsData }) {
         </div>
       </section>
       {/* Testimonial section */}
-      <section className="py-5 bg-dark text-white">
+      <section className="py-5 bg-dark text-white d-none">
         <div className="container px-5 my-5">
           <div className="row gx-5 justify-content-center">
             <div className="col-lg-10 col-xl-7">
@@ -117,7 +117,7 @@ export default function Home({ allPostsData }) {
           </div>
         </div>
       </section>
-      <section className="bg-light">
+      <section className="bg-light d-none">
         <div className="container px-4 py-5">
           <div className="row gx-5 justify-content-center">
             <div className="col-lg-8 col-xl-6">
@@ -127,9 +127,9 @@ export default function Home({ allPostsData }) {
               </div>
             </div>
           </div>
-          <div className="row gx-5">
+          <div className="row gx-5 justify-content-center">
             {allPostsData.map(({ id, date, title, description }) => (
-              <article className="col col-lg-4 mb-5" key={id}>
+              <article className="col-10 col-sm-6 col-lg-4 mb-5" key={id}>
                 <div className="card h-100 shadow border-0">
                   <Link href={`/posts/${id}`}>
                     <a>

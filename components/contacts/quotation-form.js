@@ -22,19 +22,29 @@ export default function QuotationForm() {
 
     const totalUnitPrice = (e) => {
         const element = e?.currentTarget ? e.currentTarget : e;
+        let inputValue = parseInt(element.value);
         const unitId = getElemId(element);
+
+        if(inputValue > 100) {
+            element.value = 100;
+            return;
+        } 
+
+        if(isNaN(inputValue)) {
+            inputValue = 0;
+        } 
 
         switch (unitId) {
             case 'team':
-                const team = 50 * parseInt(element.value);
+                const team = 50 * inputValue;
                 setTeamSum(team);
                 break;
             case 'users':
-                const users = 100 * parseInt(element.value);
+                const users = 100 * inputValue;
                 setUsersSum(users);
                 break;
             case 'admins':
-                const admins = 200 * parseInt(element.value);
+                const admins = 200 * inputValue;
                 setAdminsSum(admins);
                 break;
             default:
@@ -75,37 +85,37 @@ export default function QuotationForm() {
                 <input type="radio" className="btn-check" name="pricing-plan" id="large" autoComplete="off" onChange={onValueChange} value="5000" />
                 <label className="btn btn-outline-primary" htmlFor="large">Large Law Firm <br /> P5000</label>
             </div>
+                <h6>Add extra team members</h6>
             <div className="row mb-3 justify-content-between align-items-center">
 
-                <h6>Add extra team members</h6>
                 {/* additional team members input */}
-                <div className="col col-sm-4">
+                <div className="col-6 col-md">
                     <CustomNumberInput id="team" clickFn={stepper} changeFn={totalUnitPrice} />
                 </div>
                 <div className="col col-sm-4">x R50</div>
-                <div className="col-2">
+                <div className="col">
                     <input type="text" readOnly className="form-control-plaintext text-center p-0" id="addTeam" value={teamSum} />
                 </div>
             </div>
-            <div className="row mb-3 justify-content-between align-items-center">
                 <h6>Add extra Normal User logins</h6>
+            <div className="row mb-3 justify-content-between align-items-center">
                 {/* additional normal users input */}
-                <div className="col col-sm-4">
+                <div className="col-6 col-md">
                     <CustomNumberInput id="users" clickFn={stepper} changeFn={totalUnitPrice} />
                 </div>
-                <div className="col col-sm-4">x R100</div>
-                <div className="col-2">
+                <div className="col col-md-4">x R100</div>
+                <div className="col">
                     <input type="text" readOnly className="form-control-plaintext text-center p-0" id="addUsers" value={usersSum} />
                 </div>
             </div>
-            <div className="row mb-5 justify-content-between align-items-center">
                 <h6>Add extra Admin User logins</h6>
+            <div className="row mb-5 justify-content-between align-items-center">
                 {/* additional admins input */}
-                <div className="col col-sm-4">
+                <div className="col-6 col-md">
                     <CustomNumberInput id="admins" clickFn={stepper} changeFn={totalUnitPrice} />
                 </div>
                 <div className="col col-sm-4">x R200</div>
-                <div className="col-2">
+                <div className="col">
                     <input type="text" readOnly className="form-control-plaintext text-center p-0" id="addAdmins" value={adminsSum} />
                 </div>
             </div>
