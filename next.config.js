@@ -1,6 +1,6 @@
-const basePath = process.env.NODE_ENV === 'production' ? '/nextjs-website' : '';
+//const basePath = process.env.NODE_ENV === 'production' ? '/nextjs-website' : '';
 
 module.exports = {
-  basePath,
-  assetPrefix: `${basePath}/`
+  basePath: '',
+  // assetPrefix: `${basePath}/`
 };
