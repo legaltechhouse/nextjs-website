@@ -26,7 +26,7 @@ export default function NavBar() {
                     <a className={`nav-link ${setLinkState('/pricing')}`}>Pricing</a>
                 </Link>
             </li>
-            <li className="nav-item">
+            <li className="nav-item d-none">
                 <Link href="/blog">
                     <a className={`nav-link ${setLinkState('/blog')}`}>Blog</a>
                 </Link>
