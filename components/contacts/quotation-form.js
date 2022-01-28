@@ -24,11 +24,11 @@ export default function QuotationForm() {
         const element = e?.currentTarget ? e.currentTarget : e;
         let inputValue = parseInt(element.value);
         const unitId = getElemId(element);
-
+console.log(element)
         if(inputValue > 100) {
             element.value = 100;
             return;
-        } 
+        }
 
         if(isNaN(inputValue)) {
             inputValue = 0;
