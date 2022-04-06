@@ -39,8 +39,8 @@ export default function Footer() {
                 <div className="container">
                     <div className="row text-center align-items-center">
                         <div className="col-12 col-lg-2 text-lg-left">
-                            {siteTitle}
-                        </div>
+                        <span className="d-inline-block fw-bold">Legal<span className="text-primary">Tech</span>House</span>
+                       </div>
 
                         <div className="col mt-4 mt-lg-0 text-center">
                             <ul className="nav justify-content-center">

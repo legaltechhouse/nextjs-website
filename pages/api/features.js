@@ -94,7 +94,7 @@ const features = {
             id: 6,
             title: 'Downloads Page',
             image: 'downloads-site.png',
-            description: 'Ggive your clients and visitors free relevant downloadable pdfs to read at their own time'
+            description: 'Give your clients and visitors free relevant downloadable pdfs to read at their own time'
         },
         {
             id: 7,

@@ -11,15 +11,15 @@ export default function Header() {
             <div className="container-fluid px-5">
                 <Link href="/">
                     <a className="navbar-brand">
-                        <img src="/images/logo-no-tagline-small-inverse.svg" className="" alt="Logo" />
-                        <span className="d-inline-block ml-1 d-none">Legal Tech House</span>
+                        <img src="/images/logo-no-tagline-small-inverse.svg" className="d-none" alt="Logo" />
+                        <span className="d-inline-block ml-1 fw-bold">Legal<span className="text-primary">Tech</span>House</span>
                     </a>
                 </Link>
                 <button className="navbar-toggler ms-auto me-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                     <span className="d-none d-sm-inline ps-1">menu</span>
                 </button>
-                <Link href="/contact?requestquote">
+                <Link href="/contact?requestquote=950">
                     <a className="btn btn-primary d-none d-sm-block d-lg-none">Request A Quote</a>
                 </Link>
                 <div className="collapse navbar-collapse" id="mainMenu">
@@ -28,7 +28,7 @@ export default function Header() {
                         <NavBar />
                     </ul>
                 </div>
-                <Link href="/contact?requestquote">
+                <Link href="/contact?requestquote=950">
                     <a className="btn btn-primary d-none d-lg-block ms-auto">Request A Quote</a>
                 </Link>
             </div>
