@@ -45,7 +45,7 @@ export default function Contact() {
                             <button className={`nav-link ${activeContactBtn}`} id="pills-contacts-tab" data-bs-toggle="pill" data-bs-target="#pills-contacts" type="button" role="tab" aria-controls="pills-contacts" aria-selected="true" onClick={() => resetPath('/contact')}>contacts</button>
                         </li>
                         <li className="nav-item" role="presentation">
-                            <button className={`nav-link ${activeRequestBtn}`} id="pills-quotation-tab" data-bs-toggle="pill" data-bs-target="#pills-quotation" type="button" role="tab" aria-controls="pills-quotation" aria-selected="false" onClick={() => resetPath('/contact?requestquote=950')}>Request A Quote</button>
+                            <button className={`nav-link ${activeRequestBtn}`} id="pills-quotation-tab" data-bs-toggle="pill" data-bs-target="#pills-quotation" type="button" role="tab" aria-controls="pills-quotation" aria-selected="false">Request A Quote</button>
                         </li>
                     </ul>
                     <div className="tab-content p-3 p-md-5 bg-white" id="pills-tabContent">
