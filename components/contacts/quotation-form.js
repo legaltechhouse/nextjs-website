@@ -114,7 +114,7 @@ export default function QuotationForm({price = '950'}) {
             submitMessages(true);
         };
 
-        fetch('/api/contactFosrm', {
+        fetch('/api/requestQuoteForm', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json, text/plain, */*',
@@ -192,7 +192,7 @@ export default function QuotationForm({price = '950'}) {
             <hr />
             <div className="row mb-3 justify-content-between align-items-center">
                 <div className="col-6">
-                    <label htmlFor="total" className="col-sm-2 col-form-label">Total</label>
+                    <label htmlFor="total" className="col-form-label">Total monthly subscription</label>
                 </div>
                 <div className="col-4">
                     <input type="text" readOnly className="form-control-plaintext text-center" id="total" value={currentSum} />

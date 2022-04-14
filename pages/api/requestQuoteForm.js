@@ -12,30 +12,49 @@ const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export default async function (req, res) {
-
-    
+console.log(process.env.MAILTRAP_HOST)
     const quote = `
-        <h3>Quote request</h3>
+        <h3>LegalTechHouse Subscription Fee Quotation</h3>
         <p>
-        Name: ${req.body.name}<br/>
-        Email: ${req.body.email}<br/>
-        Phone: ${req.body.phoneNumber}<br/>
-        <hr/>
         Package: ${req.body.selectedPackage}<br/>
-        Team Members: ${req.body.teamMembers}<br/>
-        Normal Users: ${req.body.userLogins}<br/>
-        Admin Logins: ${req.body.adminLogins}<br/>
+        Extra Team Members total cost: ${req.body.teamMembers}<br/>
+        Extra Team Members total cost: ${req.body.userLogins}<br/>
+        Extra Team Members total cost: ${req.body.adminLogins}<br/>
         <hr/>
-        Total: ${req.body.currentSum}<br/>
+        Total monthly subscription fee: ${req.body.currentSum}<br/>
         </p>`
 
+    const quoteInternal = `
+            <h3>Quote request from: </h3>
+            <p>
+            Name: ${req.body.name}<br/>
+            Email: ${req.body.email}<br/>
+            Phone: ${req.body.phoneNumber}<br/>
+            <hr/>
+            Package: ${req.body.selectedPackage}<br/>
+            Extra Team Members total cost: ${req.body.teamMembers}<br/>
+            Extra Team Members total cost: ${req.body.userLogins}<br/>
+            Extra Team Members total cost: ${req.body.adminLogins}<br/>
+            <hr/>
+            Total monthly subscription: ${req.body.currentSum}<br/>
+            </p>`
+
     const mailData = {
-        to: 'tech.legaltechhouse@gmail.com',
-        from: 'info@legaltechhouse.com',
+        from: 'LegalTechHouse <info@legaltechhouse.com>',
+        to: `${req.body.name} <${req.body.email}>`,
         subject: 'Package Quote Request - Legal Tech House',
         text: "Sent from: " + req.body.email,
         html: emailTemplate(quote, req.body.name)
     };
+    const companyData = {
+        from: 'LegalTechHouse <info@legaltechhouse.com>',
+        to: ['<tech.legaltechhouse@gmail.com>', '<tech@legaltechhouse.com>'],
+        subject: 'Client Package Quote Request - Legal Tech House Website',
+        text: "Sent from: " + req.body.email,
+        html: emailTemplate(quoteInternal, req.body.name)
+    };
+
+    // Using MAILTRAP
 
     transporter.sendMail(mailData, function (err, info) {
         console.log(req.body)
@@ -57,7 +76,8 @@ export default async function (req, res) {
     //     text: 'and easy to do anywhere, even with Node.js',
     //     html: '<strong>and easy to do anywhere, even with Node.js</strong>',
     // }
-    // await sgMail.send(mailData)
+
+    // await sgMail.send([mailData, companyData])
     //     .then(() => {
     //         console.log('Email sent')
     //     }).catch((error) => {
@@ -68,12 +88,12 @@ export default async function (req, res) {
 };
 
 function emailTemplate(text, name) {
-    const title = 'Contact Form Submitted';
+    const title = 'Quote Request Form Submitted';
     const preheaderText = 'This is preheader text. Some clients will show this text as a preview.';
-    const companyAddress = 'Company Inc, 3 Abbey Road, San Francisco CA 94102';
-    const greeting = `<p>Hi there, ${name}</p>`;
-    const introBlock = '<p>Sometimes you just want to send a simple HTML email with a simple design and clear call to action. This is it.</p>';
-    const bodyText = text;//'<p>This is a really simple email template. Its sole purpose is to get the recipient to click the button with no distractions.</p><p>Good luck! Hope it works.</p>';
+    const companyAddress = 'LegalTechHouse registered under Digialvert Tech (PTY) LTD';
+    const greeting = `<p>Hi, ${name}!</p>`;
+    const introBlock = '<p>Thank you for your enquiry. Below is a copy of your request. Our team will be in touch with you shortly regarding next steps.</p>';
+    const bodyText = text;;
 
     return `
     <!doctype html>
