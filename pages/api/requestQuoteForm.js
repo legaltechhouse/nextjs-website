@@ -54,16 +54,16 @@ console.log(process.env.MAILTRAP_HOST)
         html: emailTemplate(quoteInternal, req.body.name)
     };
 
-    // Using MAILTRAP
+    // // Using MAILTRAP
 
-    transporter.sendMail(mailData, function (err, info) {
-        console.log(req.body)
-        if (err) {
-            console.log(err)
-        } else {
-            console.log(info)
-        }
-    });
+    // transporter.sendMail(mailData, function (err, info) {
+    //     console.log(req.body)
+    //     if (err) {
+    //         console.log(err)
+    //     } else {
+    //         console.log(info)
+    //     }
+    // });
 
     // using Twilio SendGrid's v3 Node.js Library
     // https://github.com/sendgrid/sendgrid-nodejs
@@ -77,13 +77,13 @@ console.log(process.env.MAILTRAP_HOST)
     //     html: '<strong>and easy to do anywhere, even with Node.js</strong>',
     // }
 
-    // await sgMail.send([mailData, companyData])
-    //     .then(() => {
-    //         console.log('Email sent')
-    //     }).catch((error) => {
-    //         console.log('Email NOT sent')
-    //     console.error(error)
-    // });
+    await sgMail.send([mailData, companyData])
+        .then(() => {
+            console.log('Email sent')
+        }).catch((error) => {
+            console.log('Email NOT sent')
+        console.error(error)
+    });
     res.status(200).json({ status: 'OK' });
 };
 
