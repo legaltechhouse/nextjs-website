@@ -15,18 +15,14 @@ export default async function (req, res) {
 
     const mailData = {
         from: 'LegalTechHouse <info@legaltechhouse.com>',
-        to: `${req.body.name} <${req.body.email}>`,
+        to: `${req.body.fullname} <${req.body.email}>`,
         subject: 'Package Quote Request - Legal Tech House',
         text: "Sent from: " + req.body.email,
         html: '<p>Hello HTML world!</p>',
-        templateId: 'd-eea2577efaac466fa6d80c2c3a16e5da',
+        templateId: 'd-f91466b428ea498fab3cae4577707312',
         substitutionWrappers: ['{{', '}}'],
         dynamic_template_data: {
-          receiver_selected_package: req.body.selectedPackage,
-          receiver_team_members: req.body.teamMembers,
-          receiver_user_logins: req.body.userLogins,
-          receiver_admin_logins: req.body.adminLogins,
-          receiver_current_sum: req.body.currentSum,
+            receiver_name: req.body.fullname
         }
     };
     const companyData = {
@@ -35,23 +31,38 @@ export default async function (req, res) {
         subject: 'Client Package Quote Request - Legal Tech House Website',
         text: "Sent from: " + req.body.email,
         html: '<p>Hello HTML world!</p>',
-        templateId: 'd-a296fc86b4fe4ed2b8e1256572daabc7',
+        templateId: 'd-5308ea86fd00461782b1033a9278b971',
         substitutionWrappers: ['{{', '}}'],
         dynamic_template_data: {
-          receiver_name: req.body.name,
-          receiver_email: req.body.email,
-          receiver_phone_number: req.body.phoneNumber,
-          receiver_selected_package: req.body.selectedPackage,
-          receiver_team_members: req.body.teamMembers,
-          receiver_user_logins: req.body.userLogins,
-          receiver_admin_logins: req.body.adminLogins,
-          receiver_current_sum: req.body.currentSum,
+            receiver_name: req.body.fullname,
+            receiver_email: req.body.email,
+            receiver_phone: req.body.phone,
+            receiver_message: req.body.message,
         }
     };
 
-    // Using MAILTRAP
 
-    // transporter.sendMail(mailData, function (err, info) {
+    /* ---- TEST DATA ---- */
+
+    // const quote = `
+    //     <h3>Message</h3>
+    //     <p>
+    //     Name: ${req.body.fullname}<br/>
+    //     Email: ${req.body.email}<br/>
+    //     Phone: ${req.body.phone}<br/>
+    //     <hr/>
+    //     Package: ${req.body.message}<br/>
+    //     </p>`
+
+    // const mailTrapData = {
+    //     to: 'tech.legaltechhouse@gmail.com',
+    //     from: 'info@legaltechhouse.com',
+    //     subject: 'Package Quote Request - Legal Tech House',
+    //     text: "Sent from: " + req.body.email,
+    //     html: quote
+    // };
+
+    // transporter.sendMail(mailTrapData, function (err, info) {
     //     console.log(req.body)
     //     if (err) {
     //         console.log(err)
@@ -73,10 +84,10 @@ export default async function (req, res) {
     // }
 
     await sgMail.send([mailData, companyData]).then((response) => {
-            console.log('Email sent: ', response)
-            res.status(200).json({ status: 'OK' });
-        }).catch((error) => {
-            console.log('Email NOT sent')
+        console.log('Contact Form sent: ', response)
+        res.status(200).json({ status: 'OK' });
+    }).catch((error) => {
+        console.log('Contact Form NOT sent')
         console.error(error)
     });
 };
