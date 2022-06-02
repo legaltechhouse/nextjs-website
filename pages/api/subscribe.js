@@ -16,7 +16,7 @@ export default async function (req, res) {
     const mailData = {
         from: 'LegalTechHouse <info@legaltechhouse.com>',
         to: `${req.body.fullname} <${req.body.email}>`,
-        subject: 'Package Quote Request - Legal Tech House',
+        subject: 'Verify Subscription to Legal Tech House Updates',
         text: "Sent from: " + req.body.email,
         html: '<p>Hello HTML world!</p>',
         templateId: 'd-f91466b428ea498fab3cae4577707312',
@@ -25,21 +25,19 @@ export default async function (req, res) {
             receiver_name: req.body.fullname
         }
     };
-    const companyData = {
-        from: 'LegalTechHouse <info@legaltechhouse.com>',
-        to: ['<tech.legaltechhouse@gmail.com>', '<tech@legaltechhouse.com>'],
-        subject: 'Client Package Quote Request - Legal Tech House Website',
-        text: "Sent from: " + req.body.email,
-        html: '<p>Hello HTML world!</p>',
-        templateId: 'd-5308ea86fd00461782b1033a9278b971',
-        substitutionWrappers: ['{{', '}}'],
-        dynamic_template_data: {
-            receiver_name: req.body.fullname,
-            receiver_email: req.body.email,
-            receiver_phone: req.body.phone,
-            receiver_message: req.body.message,
-        }
-    };
+    // const companyData = {
+    //     from: 'LegalTechHouse <info@legaltechhouse.com>',
+    //     to: ['<tech.legaltechhouse@gmail.com>', '<tech@legaltechhouse.com>'],
+    //     subject: 'Client Subscription Verification - Legal Tech House Website',
+    //     text: "Sent from: " + req.body.email,
+    //     html: '<p>Hello HTML world!</p>',
+    //     templateId: 'd-5308ea86fd00461782b1033a9278b971',
+    //     substitutionWrappers: ['{{', '}}'],
+    //     dynamic_template_data: {
+    //         receiver_name: req.body.fullname,
+    //         receiver_email: req.body.email,
+    //     }
+    // };
 
 
     /* ---- TEST DATA ---- */
@@ -84,10 +82,10 @@ export default async function (req, res) {
     // }
 
     await sgMail.send([mailData, companyData]).then((response) => {
-        console.log('Contact Form sent: ', response)
+        console.log('Subscription Form sent: ', response)
         res.status(200).json({ status: 'OK' });
     }).catch((error) => {
-        console.log('Contact Form NOT sent')
+        console.log('Subscription Form NOT sent')
         console.error(error)
     });
 };
