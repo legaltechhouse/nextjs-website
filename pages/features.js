@@ -25,9 +25,9 @@ export default function Features() {
             <PageHeading title="Features" caption="Why Choose Us" />
 
 
-            <section className="py-5">
+            <section className="py-5 bg-light">
                 <div className="container">
-                    <ul className="nav nav-tabs justify-content-center mb-5" id="pills-tab" role="tablist">
+                    <ul className="nav nav-tabs justify-content-center" id="pills-tab" role="tablist">
                         <li className="nav-item" role="presentation">
                             <button className="nav-link active" id="pills-website-tab" data-bs-toggle="pill" data-bs-target="#pills-website" type="button" role="tab" aria-controls="pills-website" aria-selected="true">Website</button>
                         </li>
@@ -35,7 +35,7 @@ export default function Features() {
                             <button className="nav-link" id="pills-admin-tab" data-bs-toggle="pill" data-bs-target="#pills-admin" type="button" role="tab" aria-controls="pills-admin" aria-selected="false">Admin</button>
                         </li>
                     </ul>
-                    <div className="tab-content" id="pills-tabContent">
+                    <div className="tab-content pb bg-white" id="pills-tabContent">
 
                         <div className="tab-pane fade show active" id="pills-website" role="tabpanel" aria-labelledby="pills-website-tab">
                             <div className="row text-center">
