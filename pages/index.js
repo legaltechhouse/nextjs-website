@@ -21,8 +21,8 @@ export default function Home({ allPostsData }) {
       <Head>
         <title> {siteTitle} </title>
       </Head>
-      <section className="bg-dark pt-5">
-        <div className="container px-5">
+      <section className="bg-dark pt-5 mb-5">
+        <div className="container px-5 mb-5">
           <div className="text-center mb-5">
             <h1 className="display-6 fw-bolder text-white mb-2">
               <span className="d-block">

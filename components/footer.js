@@ -75,7 +75,7 @@ export default function Footer() {
     };
     return (
         <>
-            <section className="call-to-action border-bottom border-transparent bg-dark text-white text-center" id="signup">
+            <section className="call-to-action border-bottom border-transparent bg-dark text-white text-center d-none" id="signup">
                 <div className="container position-relative">
                     <div className="row justify-content-center">
                         <div className="col-xl-6">

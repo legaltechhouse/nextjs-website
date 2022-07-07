@@ -11,7 +11,7 @@ export const siteTitle = 'LegalTechHouse';
 
 export default function Layout({ children, home }) {
     useEffect( () => { 
-        document.querySelector('body').classList.add('d-flex','flex-column','h-100');
+        document.querySelector('body').classList.add('d-flex','flex-column','h-100','justify-content-stretch','bg-dark');
         document.querySelector('#__next').classList.add('flex-shrink-0');
     } );
     return (
